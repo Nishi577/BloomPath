@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BloomPath - Empowering Women Through Work
+   Design System: Warm, Professional, Accessible
+   Primary: Teal | Accent: Warm Orange | Base: Soft Whites
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Teal-based primary palette */
+    --background: 180 20% 99%;
+    --foreground: 180 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 15% 15%;
+
+    /* Soft Teal Primary */
+    --primary: 174 62% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm cream secondary */
+    --secondary: 35 40% 96%;
+    --secondary-foreground: 180 15% 20%;
+
+    /* Soft muted tones */
+    --muted: 180 10% 95%;
+    --muted-foreground: 180 10% 45%;
+
+    /* Warm orange accent */
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success/Verified green */
+    --success: 158 64% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning amber */
+    --warning: 45 93% 47%;
+    --warning-foreground: 45 93% 10%;
+
+    /* Error/destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 15% 90%;
+    --input: 180 15% 90%;
+    --ring: 174 62% 40%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(174 62% 40%) 0%, hsl(180 50% 35%) 50%, hsl(190 45% 30%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(35 90% 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(180 15% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(180 15% 15% / 0.1), 0 2px 4px -2px hsl(180 15% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(180 15% 15% / 0.1), 0 4px 6px -4px hsl(180 15% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(180 15% 15% / 0.1), 0 8px 10px -6px hsl(180 15% 15% / 0.1);
+    --shadow-glow: 0 0 40px hsl(174 62% 40% / 0.2);
+    --shadow-accent-glow: 0 0 30px hsl(25 95% 55% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 180 15% 98%;
+    --sidebar-foreground: 180 15% 20%;
+    --sidebar-primary: 174 62% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 15% 94%;
+    --sidebar-accent-foreground: 180 15% 20%;
+    --sidebar-border: 180 15% 90%;
+    --sidebar-ring: 174 62% 40%;
+  }
+
+  .dark {
+    --background: 180 20% 8%;
+    --foreground: 180 10% 95%;
+
+    --card: 180 20% 10%;
+    --card-foreground: 180 10% 95%;
+
+    --popover: 180 20% 10%;
+    --popover-foreground: 180 10% 95%;
+
+    --primary: 174 62% 50%;
+    --primary-foreground: 180 20% 8%;
+
+    --secondary: 180 15% 15%;
+    --secondary-foreground: 180 10% 95%;
+
+    --muted: 180 15% 18%;
+    --muted-foreground: 180 10% 60%;
+
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 158 64% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 93% 47%;
+    --warning-foreground: 45 93% 10%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 15% 20%;
+    --input: 180 15% 20%;
+    --ring: 174 62% 50%;
+
+    --sidebar-background: 180 20% 8%;
+    --sidebar-foreground: 180 10% 95%;
+    --sidebar-primary: 174 62% 50%;
+    --sidebar-primary-foreground: 180 20% 8%;
+    --sidebar-accent: 180 15% 15%;
+    --sidebar-accent-foreground: 180 10% 95%;
+    --sidebar-border: 180 15% 20%;
+    --sidebar-ring: 174 62% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      hsl(174 62% 40% / 0.95) 0%,
+      hsl(174 62% 40% / 0.8) 50%,
+      hsl(174 62% 40% / 0.4) 100%
+    );
+  }
+
+  /* Glass morphism cards */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Accent glow button */
+  .btn-accent-glow {
+    @apply bg-accent text-accent-foreground;
+    box-shadow: var(--shadow-accent-glow);
+    transition: all 0.3s ease;
+  }
+
+  .btn-accent-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px hsl(25 95% 55% / 0.4);
+  }
+
+  /* Primary glow button */
+  .btn-primary-glow {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px hsl(174 62% 40% / 0.3);
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Status badges */
+  .badge-verified {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .badge-pending {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .badge-unverified {
+    @apply bg-destructive/10 text-destructive border border-destructive/20;
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-primary/10 text-primary border border-primary/20;
+    transition: all 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    @apply bg-primary/20;
+  }
+
+  /* Job card */
+  .job-card {
+    @apply bg-card rounded-xl p-6 border;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+
+  .job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Form input focus */
+  .input-focus {
+    @apply transition-all duration-200;
+  }
+
+  .input-focus:focus {
+    @apply ring-2 ring-primary/30 border-primary;
+    box-shadow: 0 0 0 4px hsl(174 62% 40% / 0.1);
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply relative px-4 py-2 font-medium transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                var(--gradient-hero) border-box;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+  }
+
+  /* Pulse animation for status indicators */
+  .pulse-success {
+    animation: pulse-success 2s infinite;
+  }
+
+  @keyframes pulse-success {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(158 64% 40% / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(158 64% 40% / 0);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Loading shimmer */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--background)) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
